@@ -1,0 +1,153 @@
+2026-04-21 00:23:13 | INFO | __main__ | Запуск обучения моделей для HW6
+2026-04-21 00:23:13 | INFO | __main__ | Логи также сохраняются в файл: C:\Users\denis\credit_scoring\notebooks\hw6\logs\train_models.log
+2026-04-21 00:23:13 | INFO | __main__ | Загрузка данных из PostgreSQL
+2026-04-21 00:23:29 | INFO | __main__ | Подготовка итогового датасета
+2026-04-21 00:23:30 | INFO | utils | Финальная матрица признаков: (307511, 32)
+2026-04-21 00:23:30 | INFO | utils | Количество выбранных признаков: 32
+2026-04-21 00:23:30 | INFO | __main__ | Соединение с базой данных закрыто
+2026-04-21 00:23:30 | INFO | __main__ | Размер обучающей выборки до split: (307511, 32)
+2026-04-21 00:23:30 | INFO | __main__ | Доля положительного класса: 0.0807
+2026-04-21 00:23:31 | INFO | __main__ | Числовых признаков: 24
+2026-04-21 00:23:31 | INFO | __main__ | Категориальных признаков: 8
+2026-04-21 00:23:31 | INFO | __main__ | ================================================================================
+2026-04-21 00:23:31 | INFO | __main__ | Обучение модели: logistic_regression
+2026-04-21 00:25:30 | INFO | __main__ | Лучшие параметры для logistic_regression: {'C': 8.896526044980005, 'class_weight': 'balanced'}
+2026-04-21 00:25:30 | INFO | __main__ | Метрики для logistic_regression | roc_auc=0.741087 | pr_auc=0.214940 | f1=0.255225 | precision=0.157902 | recall=0.665257 | accuracy=0.686568
+2026-04-21 00:25:30 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\logistic_regression.pkl
+2026-04-21 00:25:30 | INFO | __main__ | ================================================================================
+2026-04-21 00:25:30 | INFO | __main__ | Обучение модели: decision_tree
+2026-04-21 00:26:57 | INFO | __main__ | Лучшие параметры для decision_tree: {'max_depth': 7, 'min_samples_split': 37, 'min_samples_leaf': 1, 'class_weight': None}
+2026-04-21 00:26:57 | INFO | __main__ | Метрики для decision_tree | roc_auc=0.709656 | pr_auc=0.178978 | f1=0.011083 | precision=0.318182 | recall=0.005639 | accuracy=0.918752
+2026-04-21 00:26:57 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\decision_tree.pkl
+2026-04-21 00:26:57 | INFO | __main__ | ================================================================================
+2026-04-21 00:26:57 | INFO | __main__ | Обучение модели: random_forest
+2026-04-21 00:55:57 | INFO | __main__ | Лучшие параметры для random_forest: {'n_estimators': 350, 'max_depth': 15, 'min_samples_split': 30, 'min_samples_leaf': 6, 'max_features': 'sqrt', 'class_weight': None}
+2026-04-21 00:55:57 | INFO | __main__ | Метрики для random_forest | roc_auc=0.742865 | pr_auc=0.225036 | f1=0.000805 | precision=1.000000 | recall=0.000403 | accuracy=0.919305
+2026-04-21 00:55:57 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\random_forest.pkl
+2026-04-21 00:55:57 | INFO | __main__ | ================================================================================
+2026-04-21 00:55:57 | INFO | __main__ | Обучение модели: gradient_boosting
+2026-04-21 00:58:53 | INFO | __main__ | Лучшие параметры для gradient_boosting: {'learning_rate': 0.12903849674069456, 'max_depth': 3, 'max_leaf_nodes': 63, 'min_samples_leaf': 100, 'l2_regularization': 0.6857869286932003, 'max_iter': 250}
+2026-04-21 00:58:53 | INFO | __main__ | Метрики для gradient_boosting | roc_auc=0.754516 | pr_auc=0.239708 | f1=0.039353 | precision=0.601190 | recall=0.020342 | accuracy=0.919825
+2026-04-21 00:58:53 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\gradient_boosting.pkl
+2026-04-21 00:58:53 | INFO | __main__ | Итоговая таблица метрик:
+              model  roc_auc   pr_auc       f1  precision   recall  accuracy
+  gradient_boosting 0.754516 0.239708 0.039353   0.601190 0.020342  0.919825
+      random_forest 0.742865 0.225036 0.000805   1.000000 0.000403  0.919305
+logistic_regression 0.741087 0.214940 0.255225   0.157902 0.665257  0.686568
+      decision_tree 0.709656 0.178978 0.011083   0.318182 0.005639  0.918752
+2026-04-21 00:58:53 | INFO | __main__ | Метрики сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\results\model_metrics.csv
+2026-04-21 00:58:54 | INFO | __main__ | ROC-кривые сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\roc_curves.png
+2026-04-21 00:58:57 | INFO | __main__ | Матрицы ошибок сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\confusion_matrices.png
+2026-04-21 00:58:57 | INFO | __main__ | Обучение завершено успешно
+2026-04-23 12:42:59 | INFO | __main__ | Запуск обучения моделей для HW6
+2026-04-23 12:42:59 | INFO | __main__ | Логи сохраняются в файл: C:\Users\denis\credit_scoring\notebooks\hw6\logs\train_models.log
+2026-04-23 12:43:00 | INFO | __main__ | Загрузка данных из PostgreSQL
+2026-04-23 12:43:16 | INFO | __main__ | Подготовка итогового датасета
+2026-04-23 12:43:18 | INFO | utils | Финальная матрица признаков: (307511, 32)
+2026-04-23 12:43:18 | INFO | utils | Количество выбранных признаков: 32
+2026-04-23 12:43:18 | INFO | __main__ | Соединение с базой данных закрыто
+2026-04-23 12:43:18 | INFO | __main__ | Доля положительного класса: 0.0807
+2026-04-23 12:43:18 | INFO | __main__ | Числовых признаков: 24
+2026-04-23 12:43:18 | INFO | __main__ | Категориальных признаков: 8
+2026-04-23 12:43:18 | INFO | __main__ | ================================================================================
+2026-04-23 12:43:18 | INFO | __main__ | Обучение модели: logistic_regression
+2026-04-23 12:57:16 | INFO | __main__ | Запуск обучения моделей для HW6
+2026-04-23 12:57:16 | INFO | __main__ | Логи сохраняются в файл: C:\Users\denis\credit_scoring\notebooks\hw6\logs\train_models.log
+2026-04-23 12:57:16 | INFO | __main__ | Загрузка данных из PostgreSQL
+2026-04-23 12:57:37 | INFO | __main__ | Запуск обучения моделей для HW6
+2026-04-23 12:57:37 | INFO | __main__ | Логи сохраняются в файл: C:\Users\denis\credit_scoring\notebooks\hw6\logs\train_models.log
+2026-04-23 12:57:37 | INFO | __main__ | Загрузка данных из PostgreSQL
+2026-04-23 12:57:54 | INFO | __main__ | Подготовка итогового датасета
+2026-04-23 12:57:55 | INFO | utils | Финальная матрица признаков: (307511, 32)
+2026-04-23 12:57:55 | INFO | utils | Количество выбранных признаков: 32
+2026-04-23 12:57:55 | INFO | __main__ | Соединение с базой данных закрыто
+2026-04-23 12:57:55 | INFO | __main__ | Доля положительного класса: 0.0807
+2026-04-23 12:57:56 | INFO | __main__ | Числовых признаков: 24
+2026-04-23 12:57:56 | INFO | __main__ | Категориальных признаков: 8
+2026-04-23 12:57:56 | INFO | __main__ | ================================================================================
+2026-04-23 12:57:56 | INFO | __main__ | Обучение модели: logistic_regression
+2026-04-23 12:59:53 | INFO | __main__ | Лучший threshold для logistic_regression: 0.49 | precision=0.1553 | recall=0.6824 | f1=0.2530 | f2=0.4065 | accuracy=0.6748
+2026-04-23 12:59:53 | INFO | __main__ | Лучшие параметры для logistic_regression: {'C': 3.703917237984409, 'class_weight': 'balanced'}
+2026-04-23 12:59:53 | INFO | __main__ | Метрики для logistic_regression | roc_auc=0.741211 | pr_auc=0.214929 | f1=0.255827 | precision=0.158295 | recall=0.666465 | accuracy=0.686991
+2026-04-23 12:59:53 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\logistic_regression.pkl
+2026-04-23 12:59:53 | INFO | __main__ | ================================================================================
+2026-04-23 12:59:53 | INFO | __main__ | Обучение модели: decision_tree
+2026-04-23 13:01:26 | INFO | __main__ | Лучший threshold для decision_tree: 0.11 | precision=0.1828 | recall=0.4340 | f1=0.2573 | f2=0.3405 | accuracy=0.7977
+2026-04-23 13:01:26 | INFO | __main__ | Лучшие параметры для decision_tree: {'max_depth': 7, 'min_samples_split': 47, 'min_samples_leaf': 10, 'class_weight': None}
+2026-04-23 13:01:26 | INFO | __main__ | Метрики для decision_tree | roc_auc=0.708313 | pr_auc=0.180260 | f1=0.010712 | precision=0.355263 | recall=0.005438 | accuracy=0.918915
+2026-04-23 13:01:26 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\decision_tree.pkl
+2026-04-23 13:01:26 | INFO | __main__ | ================================================================================
+2026-04-23 13:01:26 | INFO | __main__ | Обучение модели: random_forest
+2026-04-23 13:33:15 | INFO | __main__ | Лучший threshold для random_forest: 0.31 | precision=0.1806 | recall=0.5921 | f1=0.2768 | f2=0.4068 | accuracy=0.7503
+2026-04-23 13:33:15 | INFO | __main__ | Лучшие параметры для random_forest: {'n_estimators': 150, 'max_depth': None, 'min_samples_split': 28, 'min_samples_leaf': 9, 'max_features': 'sqrt', 'class_weight': 'balanced'}
+2026-04-23 13:33:15 | INFO | __main__ | Метрики для random_forest | roc_auc=0.744407 | pr_auc=0.221281 | f1=0.261585 | precision=0.282838 | recall=0.243303 | accuracy=0.889111
+2026-04-23 13:33:15 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\random_forest.pkl
+2026-04-23 13:33:15 | INFO | __main__ | ================================================================================
+2026-04-23 13:33:15 | INFO | __main__ | Обучение модели: gradient_boosting
+2026-04-23 13:35:50 | INFO | __main__ | Лучший threshold для gradient_boosting: 0.10 | precision=0.1848 | recall=0.5885 | f1=0.2812 | f2=0.4095 | accuracy=0.7572
+2026-04-23 13:35:50 | INFO | __main__ | Лучшие параметры для gradient_boosting: {'learning_rate': 0.1330171989586832, 'max_depth': 3, 'max_leaf_nodes': 15, 'min_samples_leaf': 83, 'l2_regularization': 0.3929279649730657, 'max_iter': 350}
+2026-04-23 13:35:50 | INFO | __main__ | Метрики для gradient_boosting | roc_auc=0.753886 | pr_auc=0.240281 | f1=0.040546 | precision=0.630303 | recall=0.020947 | accuracy=0.919971
+2026-04-23 13:35:50 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\gradient_boosting.pkl
+2026-04-23 13:35:50 | INFO | __main__ | Итоговая таблица метрик:
+              model  roc_auc   pr_auc       f1  precision   recall  accuracy
+  gradient_boosting 0.753886 0.240281 0.040546   0.630303 0.020947  0.919971
+      random_forest 0.744407 0.221281 0.261585   0.282838 0.243303  0.889111
+logistic_regression 0.741211 0.214929 0.255827   0.158295 0.666465  0.686991
+      decision_tree 0.708313 0.180260 0.010712   0.355263 0.005438  0.918915
+2026-04-23 13:35:50 | INFO | __main__ | Метрики сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\results\model_metrics.csv
+2026-04-23 13:35:51 | INFO | __main__ | ROC-кривые сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\roc_curves.png
+2026-04-23 13:35:54 | INFO | __main__ | Матрицы ошибок сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\confusion_matrices.png
+2026-04-23 13:35:56 | INFO | __main__ | Матрицы ошибок с подобранными threshold сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\confusion_matrices_threshold.png
+2026-04-23 13:35:56 | INFO | __main__ | Обучение завершено успешно
+2026-04-23 19:01:15 | INFO | __main__ | Запуск обучения моделей для HW6
+2026-04-23 19:01:15 | INFO | __main__ | Логи сохраняются в файл: C:\Users\denis\credit_scoring\notebooks\hw6\logs\train_models.log
+2026-04-23 19:01:15 | INFO | __main__ | Загрузка данных из PostgreSQL
+2026-04-23 19:01:40 | INFO | __main__ | Подготовка итогового датасета
+2026-04-23 19:01:42 | INFO | utils | Финальная матрица признаков: (307511, 32)
+2026-04-23 19:01:42 | INFO | utils | Количество выбранных признаков: 32
+2026-04-23 19:01:42 | INFO | __main__ | Соединение с базой данных закрыто
+2026-04-23 19:01:42 | INFO | __main__ | Доля положительного класса: 0.0807
+2026-04-23 19:01:43 | INFO | __main__ | Размер train: 184506
+2026-04-23 19:01:43 | INFO | __main__ | Размер valid: 61502
+2026-04-23 19:01:43 | INFO | __main__ | Размер test: 61503
+2026-04-23 19:01:43 | INFO | __main__ | Числовых признаков: 24
+2026-04-23 19:01:43 | INFO | __main__ | Категориальных признаков: 8
+2026-04-23 19:01:43 | INFO | __main__ | ================================================================================
+2026-04-23 19:01:43 | INFO | __main__ | Обучение модели: logistic_regression
+2026-04-23 19:03:52 | INFO | __main__ | Лучший threshold для logistic_regression выбран на valid: 0.48 | precision=0.1550 | recall=0.7158 | f1=0.2548 | f2=0.4153 | accuracy=0.6620
+2026-04-23 19:03:52 | INFO | __main__ | Метрики на test для logistic_regression при threshold=0.48 | precision=0.1514 | recall=0.6967 | f1=0.2487 | f2=0.4050 | accuracy=0.6603
+2026-04-23 19:03:52 | INFO | __main__ | Лучшие параметры для logistic_regression: {'C': 6.32044704876328, 'class_weight': 'balanced'}
+2026-04-23 19:03:52 | INFO | __main__ | Метрики для logistic_regression | roc_auc=0.740625 | pr_auc=0.214695 | f1=0.255459 | precision=0.158058 | recall=0.665660 | accuracy=0.686763
+2026-04-23 19:03:52 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\logistic_regression.pkl
+2026-04-23 19:03:52 | INFO | __main__ | ================================================================================
+2026-04-23 19:03:52 | INFO | __main__ | Обучение модели: decision_tree
+2026-04-23 19:05:19 | INFO | __main__ | Лучший threshold для decision_tree выбран на valid: 0.50 | precision=0.1596 | recall=0.5936 | f1=0.2515 | f2=0.3844 | accuracy=0.7148
+2026-04-23 19:05:19 | INFO | __main__ | Метрики на test для decision_tree при threshold=0.50 | precision=0.1545 | recall=0.5716 | f1=0.2433 | f2=0.3712 | accuracy=0.7130
+2026-04-23 19:05:19 | INFO | __main__ | Лучшие параметры для decision_tree: {'max_depth': 5, 'min_samples_split': 91, 'min_samples_leaf': 12, 'class_weight': 'balanced'}
+2026-04-23 19:05:19 | INFO | __main__ | Метрики для decision_tree | roc_auc=0.706170 | pr_auc=0.170654 | f1=0.243292 | precision=0.154533 | recall=0.571601 | accuracy=0.712957
+2026-04-23 19:05:19 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\decision_tree.pkl
+2026-04-23 19:05:19 | INFO | __main__ | ================================================================================
+2026-04-23 19:05:19 | INFO | __main__ | Обучение модели: random_forest
+2026-04-23 19:44:16 | INFO | __main__ | Лучший threshold для random_forest выбран на valid: 0.10 | precision=0.1866 | recall=0.5776 | f1=0.2821 | f2=0.4071 | accuracy=0.7627
+2026-04-23 19:44:16 | INFO | __main__ | Метрики на test для random_forest при threshold=0.10 | precision=0.1800 | recall=0.5559 | f1=0.2720 | f2=0.3922 | accuracy=0.7598
+2026-04-23 19:44:16 | INFO | __main__ | Лучшие параметры для random_forest: {'n_estimators': 350, 'max_depth': 10, 'min_samples_split': 21, 'min_samples_leaf': 9, 'max_features': 'log2', 'class_weight': None}
+2026-04-23 19:44:16 | INFO | __main__ | Метрики для random_forest | roc_auc=0.739840 | pr_auc=0.219666 | f1=0.000000 | precision=0.000000 | recall=0.000000 | accuracy=0.919272
+2026-04-23 19:44:17 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\random_forest.pkl
+2026-04-23 19:44:17 | INFO | __main__ | ================================================================================
+2026-04-23 19:44:17 | INFO | __main__ | Обучение модели: gradient_boosting
+2026-04-23 19:47:28 | INFO | __main__ | Лучший threshold для gradient_boosting выбран на valid: 0.10 | precision=0.1892 | recall=0.6048 | f1=0.2883 | f2=0.4202 | accuracy=0.7589
+2026-04-23 19:47:28 | INFO | __main__ | Метрики на test для gradient_boosting при threshold=0.10 | precision=0.1844 | recall=0.5897 | f1=0.2809 | f2=0.4096 | accuracy=0.7563
+2026-04-23 19:47:28 | INFO | __main__ | Лучшие параметры для gradient_boosting: {'learning_rate': 0.07176693316627357, 'max_depth': 3, 'max_leaf_nodes': 63, 'min_samples_leaf': 24, 'l2_regularization': 0.9747146484856513, 'max_iter': 350}
+2026-04-23 19:47:28 | INFO | __main__ | Метрики для gradient_boosting | roc_auc=0.752342 | pr_auc=0.235851 | f1=0.029499 | precision=0.625000 | recall=0.015106 | accuracy=0.919760
+2026-04-23 19:47:28 | INFO | __main__ | Модель сохранена: C:\Users\denis\credit_scoring\notebooks\hw6\models\gradient_boosting.pkl
+2026-04-23 19:47:28 | INFO | __main__ | Итоговая таблица метрик:
+              model  roc_auc   pr_auc       f1  precision   recall  accuracy
+  gradient_boosting 0.752342 0.235851 0.029499   0.625000 0.015106  0.919760
+logistic_regression 0.740625 0.214695 0.255459   0.158058 0.665660  0.686763
+      random_forest 0.739840 0.219666 0.000000   0.000000 0.000000  0.919272
+      decision_tree 0.706170 0.170654 0.243292   0.154533 0.571601  0.712957
+2026-04-23 19:47:28 | INFO | __main__ | Метрики сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\results\model_metrics.csv
+2026-04-23 19:47:30 | INFO | __main__ | ROC-кривые сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\roc_curves.png
+2026-04-23 19:47:34 | INFO | __main__ | Матрицы ошибок сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\confusion_matrices.png
+2026-04-23 19:47:38 | INFO | __main__ | Матрицы ошибок с подобранными threshold сохранены: C:\Users\denis\credit_scoring\notebooks\hw6\images\confusion_matrices_threshold.png
+2026-04-23 19:47:38 | INFO | __main__ | Обучение завершено успешно

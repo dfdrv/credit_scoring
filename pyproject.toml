@@ -1,0 +1,34 @@
+[project]
+name = "credit-scoring"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Denis",email = "denis.f3578@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "jupyter (>=1.1.1,<2.0.0)",
+    "dvc (>=3.67.1,<4.0.0)",
+    "pandas (>=3.0.2,<4.0.0)",
+    "numpy (>=2.4.4,<3.0.0)",
+    "psycopg2-binary (>=2.9.11,<3.0.0)",
+    "pyarrow (>=23.0.1,<24.0.0)"
+]
+
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "wemake-python-styleguide (>=1.6.1,<2.0.0)",
+    "isort (>=8.0.1,<9.0.0)"
+]

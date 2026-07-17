@@ -1,0 +1,103 @@
+schema: '2.0'
+stages:
+  extract_raw:
+    cmd: python -u ../src/app/modelling/pipelines/extract_raw_tables.py
+    deps:
+    - path: ../src/app/modelling/pipelines/extract_raw_tables.py
+      hash: md5
+      md5: 838a7bf5ea83fe2e1e78caaafb37607b
+      size: 1557
+    - path: ../src/app/utils/db_manager.py
+      hash: md5
+      md5: 154fd4bab7eea8c158f49d9b78883da4
+      size: 6292
+    - path: ../src/config/db_config.py
+      hash: md5
+      md5: 3b65e59a90ecd2239c941812f736049b
+      size: 382
+    outs:
+    - path: ../data/raw/application.parquet
+      hash: md5
+      md5: 28b584be9ff2b58c55e43cadc421bae4
+      size: 25741297
+    - path: ../data/raw/bureau.parquet
+      hash: md5
+      md5: e8f941c0caa455cef91539398ff81028
+      size: 35576358
+    - path: ../data/raw/bureau_balance.parquet
+      hash: md5
+      md5: 7662d2dad125bf6697c051fffb40019f
+      size: 16648668
+    - path: ../data/raw/previous_application.parquet
+      hash: md5
+      md5: 55efd3d0eb76fc246704b53598e46505
+      size: 63715350
+  application_features:
+    cmd: python -u ../src/app/modelling/pipelines/build_application_features.py
+    deps:
+    - path: ../data/raw/application.parquet
+      hash: md5
+      md5: 28b584be9ff2b58c55e43cadc421bae4
+      size: 25741297
+    - path: ../data/raw/previous_application.parquet
+      hash: md5
+      md5: 55efd3d0eb76fc246704b53598e46505
+      size: 63715350
+    - path: ../src/app/modelling/features/application_features.py
+      hash: md5
+      md5: 119f65b996c337c03fb04d3c20986a04
+      size: 8632
+    - path: ../src/app/modelling/pipelines/build_application_features.py
+      hash: md5
+      md5: 74651324710d0179791339fbb6cf44e8
+      size: 1615
+    outs:
+    - path: ../data/features/application_features.parquet
+      hash: md5
+      md5: 169e72bac96f85f0edff9976f18026f7
+      size: 17197534
+  bureau_features:
+    cmd: python -u ../src/app/modelling/pipelines/build_bureau_features.py
+    deps:
+    - path: ../data/raw/bureau.parquet
+      hash: md5
+      md5: e8f941c0caa455cef91539398ff81028
+      size: 35576358
+    - path: ../src/app/modelling/features/bureau_features.py
+      hash: md5
+      md5: 1cead41225d434934a512496d67c441f
+      size: 5524
+    - path: ../src/app/modelling/pipelines/build_bureau_features.py
+      hash: md5
+      md5: 081e7fba0e8dd3e6083e51b007bb9cae
+      size: 1327
+    outs:
+    - path: ../data/features/bureau_features.parquet
+      hash: md5
+      md5: 6c0fdb7fa192b2acf094575b83e1bf06
+      size: 2888440
+  bureau_balance_features:
+    cmd: python -u 
+      ../src/app/modelling/pipelines/build_bureau_balance_features.py
+    deps:
+    - path: ../data/raw/bureau.parquet
+      hash: md5
+      md5: e8f941c0caa455cef91539398ff81028
+      size: 35576358
+    - path: ../data/raw/bureau_balance.parquet
+      hash: md5
+      md5: 7662d2dad125bf6697c051fffb40019f
+      size: 16648668
+    - path: ../src/app/modelling/features/bureau_balance_features.py
+      hash: md5
+      md5: 8a73682c509bc3ab1ef6570d0c639cb4
+      size: 6404
+    - path: ../src/app/modelling/pipelines/build_bureau_balance_features.py
+      hash: md5
+      md5: 111ccbcbc9001348ade71e653d228f98
+      size: 1814
+    outs:
+    - path: ../data/features/bureau_balance_features.parquet
+      hash: md5
+      md5: d9737c0c35a641b2828dd620027fe4be
+      size: 1885354

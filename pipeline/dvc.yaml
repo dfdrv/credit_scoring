@@ -1,0 +1,39 @@
+stages:
+  extract_raw:
+    cmd: python -u ../src/app/modelling/pipelines/extract_raw_tables.py
+    deps:
+    - ../src/app/modelling/pipelines/extract_raw_tables.py
+    - ../src/app/utils/db_manager.py
+    - ../src/config/db_config.py
+    outs:
+    - ../data/raw/application.parquet
+    - ../data/raw/bureau.parquet
+    - ../data/raw/bureau_balance.parquet
+    - ../data/raw/previous_application.parquet
+  application_features:
+    cmd: python -u ../src/app/modelling/pipelines/build_application_features.py
+    deps:
+    - ../data/raw/application.parquet
+    - ../data/raw/previous_application.parquet
+    - ../src/app/modelling/features/application_features.py
+    - ../src/app/modelling/pipelines/build_application_features.py
+    outs:
+    - ../data/features/application_features.parquet
+  bureau_features:
+    cmd: python -u ../src/app/modelling/pipelines/build_bureau_features.py
+    deps:
+    - ../data/raw/bureau.parquet
+    - ../src/app/modelling/features/bureau_features.py
+    - ../src/app/modelling/pipelines/build_bureau_features.py
+    outs:
+    - ../data/features/bureau_features.parquet
+  bureau_balance_features:
+    cmd: python -u 
+      ../src/app/modelling/pipelines/build_bureau_balance_features.py
+    deps:
+    - ../data/raw/bureau.parquet
+    - ../data/raw/bureau_balance.parquet
+    - ../src/app/modelling/features/bureau_balance_features.py
+    - ../src/app/modelling/pipelines/build_bureau_balance_features.py
+    outs:
+    - ../data/features/bureau_balance_features.parquet
